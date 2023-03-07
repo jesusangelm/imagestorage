@@ -14,4 +14,4 @@ componentes:
 - S3 object storage (IDrive E2 en mi caso)
 - CDN (Bunny.net CDN o Gcore CDN en mi caso)
 
-Usado para [JesusMarin.Dev](https://jesusmarin.dev)]
+Usado para [JesusMarin.Dev](https://jesusmarin.dev)
