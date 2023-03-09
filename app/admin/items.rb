@@ -10,8 +10,14 @@ ActiveAdmin.register Item do
     column :image do |item|
       item.image.attached? ? link_to(image_tag(item.image.variant(:micro)), item.image) : 'No image'
     end
+    column 'CDN image' do |item|
+      item.image.attached? ? link_to(image_tag(cdn_image_url(item.image.variant(:micro)) ), cdn_image_url(item.image)) : 'No image'
+    end
     column 'URL variants' do |item|
       item.image.attached? ? [:mini, :micro].map { |variant| link_to(variant, item.image.variant(variant)) } : 'No image'
+    end
+    column 'CDN URL variants' do |item|
+      item.image.attached? ? [:mini, :micro].map { |variant| link_to(variant, cdn_image_url(item.image.variant(variant))) } : 'No image'
     end
     column :created_at
     column :updated_at
