@@ -1,24 +1,16 @@
-# README
+# ImageStorage
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+App rails basica para almacenar imagenes y acceder a ellas mediante url.
 
-Things you may want to cover:
+Guarda las imagenes en cualquier object storage que sea S3 compatible.
 
-* Ruby version
+Se integra con una CDN para optimizar la carga de las imagenes.
 
-* System dependencies
+componentes:
 
-* Configuration
+- Rails
+- SQLite3
+- S3 object storage (IDrive E2, BackBlaze, etc)
+- CDN (Bunny CDN, Gcore CDN, etc)
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Usado para [JesusMarin.Dev](https://jesusmarin.dev)
