@@ -1,0 +1,16 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Item_1
+  desc: desc Item_1
+  category: one
+
+two:
+  name: Item_2
+  desc: desc Item_2
+  category: two
+
+three:
+  name: Item_3
+  desc: desc Item_3
+  category: three
