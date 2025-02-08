@@ -11,5 +11,10 @@ module ActiveSupport
     fixtures :all
 
     # Add more helper methods to be used by all tests here...
+
+    # cleaning test_fixtures storage
+    Minitest.after_run do
+      FileUtils.rm_rf(ActiveStorage::Blob.services.fetch(:test_fixtures).root)
+    end
   end
 end
