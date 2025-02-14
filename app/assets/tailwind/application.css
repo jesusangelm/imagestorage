@@ -1,1 +1,13 @@
 @import "tailwindcss";
+
+.categories {
+  & form {
+    @apply inline-block;
+  }
+}
+
+.items {
+  & form {
+    @apply inline-block;
+  }
+}
