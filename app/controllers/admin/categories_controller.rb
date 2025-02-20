@@ -1,5 +1,5 @@
 class Admin::CategoriesController < ApplicationController
-  before_action :set_category, only: [ :edit, :update ]
+  before_action :set_category, only: [ :edit, :update, :destroy ]
 
   def index
     @categories = Category.all
@@ -28,6 +28,11 @@ class Admin::CategoriesController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @category.destroy
+    redirect_to admin_categories_url
   end
 
   private

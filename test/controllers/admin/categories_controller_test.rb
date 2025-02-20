@@ -46,4 +46,13 @@ class Admin::CategoriesControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to admin_categories_path
   end
+
+  test "should destroy a category" do
+    @delete_me = categories(:two)
+    assert_difference("Category.count", -1) do
+      delete admin_category_url(@delete_me)
+    end
+
+    assert_redirected_to admin_categories_path
+  end
 end

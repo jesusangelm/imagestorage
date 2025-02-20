@@ -1,4 +1,4 @@
 class Category < ApplicationRecord
   validates :name, presence: true, uniqueness: { case_sensitive: false }
-  has_many :items
+  has_many :items, dependent: :destroy
 end
