@@ -4,6 +4,7 @@ class Admin::ItemsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @items = items()
     @existed_item = items(:one)
+    @no_image_item = items(:two)
   end
 
   test "should get items index" do
@@ -56,5 +57,16 @@ class Admin::ItemsControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_redirected_to admin_items_path
+  end
+
+  test "should upload an image" do
+    file = fixture_file_upload("imagen_prueba.png", "image/png")
+
+    assert_not @no_image_item.image.present?
+    patch admin_item_url(@no_image_item), params: { item: { image: file } }
+
+    assert_redirected_to admin_items_path
+    @no_image_item.reload
+    assert @no_image_item.image.present?
   end
 end
