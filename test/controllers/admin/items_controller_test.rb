@@ -2,6 +2,9 @@ require "test_helper"
 
 class Admin::ItemsControllerTest < ActionDispatch::IntegrationTest
   setup do
+    @user = users(:one)
+    login_as(@user)
+
     @items = items()
     @existed_item = items(:one)
     @no_image_item = items(:two)

@@ -18,6 +18,17 @@
     <%= javascript_importmap_tags %>
   </head>
   <body class="bg-gray-100">
-    <%= yield %>
+    <%= render "layouts/admin/header" %>
+    <div class="flex h-screen">
+      <div id="flash">
+        <%= render "layouts/admin/flash" %>
+      </div>
+      <!-- sidebar -->
+      <%= render "layouts/admin/sidebar" %>
+      <!-- main content -->
+      <main class="flex-1 p-8">
+        <%= yield %>
+      </main>
+    </div>
   </body>
 </html>

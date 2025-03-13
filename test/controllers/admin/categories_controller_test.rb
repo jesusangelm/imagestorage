@@ -2,6 +2,9 @@ require "test_helper"
 
 class Admin::CategoriesControllerTest < ActionDispatch::IntegrationTest
   setup do
+    @user = users(:one)
+    login_as(@user)
+
     @categories = categories()
     @existed_category = categories(:one)
   end

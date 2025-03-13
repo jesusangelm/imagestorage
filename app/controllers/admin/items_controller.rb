@@ -1,4 +1,5 @@
 class Admin::ItemsController < ApplicationController
+  layout "admin/layout"
   before_action :set_item, only: [ :edit, :update, :destroy ]
   before_action :set_categories, only: [ :new, :create, :edit ]
 

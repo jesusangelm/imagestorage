@@ -2,6 +2,9 @@ require "test_helper"
 
 class ItemsIntegrationTest < ActionDispatch::IntegrationTest
   setup do
+    @user = users(:one)
+    login_as(@user)
+
     @category = categories(:one)
     @item = items(:one)
   end
