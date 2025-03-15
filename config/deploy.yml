@@ -36,6 +36,9 @@ registry:
 env:
   secret:
     - RAILS_MASTER_KEY
+    - B2_REGION
+    - B2_BUCKET
+    - B2_ENDPOINT
   clear:
     # Run the Solid Queue Supervisor inside the web server's Puma process to do jobs.
     # When you start using multiple servers, you should split out job processing to a dedicated machine.
