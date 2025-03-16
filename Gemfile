@@ -43,7 +43,8 @@ gem "thruster", require: false
 gem "image_processing", "~> 1.2"
 
 # AWS S3 SDK
-gem "aws-sdk-s3", require: false
+gem "aws-sdk-s3", "1.177.0", require: false # do not change until B2 implement x-amz-checksum-crc32
+gem "aws-sdk-core", "3.211", require: false # do not change until B2 implement x-amz-checksum-crc32
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
