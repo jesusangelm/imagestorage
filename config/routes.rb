@@ -25,13 +25,14 @@ Rails.application.routes.draw do
 
   direct :cdn_image do |model, options|
     expires_in = options.delete(:expires_in) { ActiveStorage.urls_expire_in }
+    cdn_host = Rails.env.production? ? Rails.application.credentials.cdn_host : "localhost"
 
     if model.respond_to?(:signed_id)
       route_for(
         :rails_service_blob_proxy,
         model.signed_id(expires_in: expires_in),
         model.filename,
-        options.merge(host: Rails.application.credentials.cdn_host)
+        options.merge(host: cdn_host)
       )
     else
       signed_blob_id = model.blob.signed_id(expires_in: expires_in)
@@ -43,7 +44,7 @@ Rails.application.routes.draw do
         signed_blob_id,
         variation_key,
         filename,
-        options.merge(host: Rails.application.credentials.cdn_host)
+        options.merge(host: cdn_host)
       )
     end
   end
