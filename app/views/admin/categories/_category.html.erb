@@ -2,11 +2,11 @@
   <div class="name w-1/3 py-3 px-4"><%= category.name %></div>
   <div class="desc w-1/3 py-3 px-4"><%= category.desc %></div>
   <div class="actions w-1/3 py-3 px-4 text-right">
-    <%= link_to "📝 Editar", edit_admin_category_path(category),
-      class: "bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600 no-underline" %>
+    <%= link_to "📝", edit_admin_category_path(category), title: "Editar",
+      class: "pr-1 no-underline" %>
     <%= button_to admin_category_path(category), method: :delete, form: {data: {turbo_confirm: "Are your sure?"}},
-      class: "bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 ml-2" do %>
-      🚮 Eliminar
+      title: "Eliminar", class: "pr-1" do %>
+      🚮
     <% end %>
   </div>
 </div>
