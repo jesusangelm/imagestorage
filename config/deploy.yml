@@ -2,7 +2,7 @@
 service: image_storage
 
 # Name of the container image.
-image: jmdev/image_storage
+image: angel/imagestorage
 
 # Deploy to these servers.
 servers:
@@ -25,8 +25,8 @@ proxy:
 registry:
   # Specify the registry server, if you're not using Docker Hub
   # server: registry.digitalocean.com / ghcr.io / ...
-  server: reg.m3n.org
-  username: jesusangelm
+  server: git.jesusmarin.dev
+  username: angel
 
   # Always use an access token rather than real password when possible.
   password:
