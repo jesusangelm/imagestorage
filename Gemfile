@@ -1,13 +1,13 @@
 source "https://rubygems.org"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 8.0", ">= 8.0.3"
+gem "rails", "~> 8.1", ">= 8.1.1"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", "~> 2.7", ">= 2.7.4"
 # Use the Puma web server [https://github.com/puma/puma]
-gem "puma", "~> 7.0", ">= 7.0.4"
+gem "puma", "~> 7.1"
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
@@ -40,7 +40,7 @@ gem "kamal", require: false
 gem "thruster", require: false
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 1.14"
 
 # AWS S3 SDK
 gem "aws-sdk-s3", "1.177.0", require: false # do not change until B2 implement x-amz-checksum-crc32
